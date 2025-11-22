@@ -25,7 +25,7 @@ echo ""
 
 # Initialize repository
 echo "═══ Step 2: Initialize Repository ═══"
-echo "$ vcs init"
+echo "$ nit init"
 ../nit init
 echo ""
 sleep 1
@@ -67,45 +67,45 @@ sleep 1
 
 # Add files to staging
 echo "═══ Step 4: Stage Files ═══"
-echo "$ vcs add ."
+echo "$ nit add ."
 ../nit add .
 echo ""
 sleep 1
 
 # Check status
 echo "═══ Step 5: Check Status ═══"
-echo "$ vcs status"
+echo "$ nit status"
 ../nit status
 echo ""
 sleep 1
 
 # Create first commit
 echo "═══ Step 6: Create Initial Commit ═══"
-echo "$ vcs commit -m \"Initial commit: Add README, main.c, and Makefile\""
+echo "$ nit commit -m \"Initial commit: Add README, main.c, and Makefile\""
 ../nit commit -m "Initial commit: Add README, main.c, and Makefile"
 echo ""
 sleep 1
 
 # View log
 echo "═══ Step 7: View Commit History ═══"
-echo "$ vcs log"
+echo "$ nit log"
 ../nit log
 echo ""
 sleep 1
 
 # Create feature branch
 echo "═══ Step 8: Create Feature Branch ═══"
-echo "$ vcs branch feature-greeting"
+echo "$ nit branch feature-greeting"
 ../nit branch feature-greeting
 echo ""
-echo "$ vcs branch"
+echo "$ nit branch"
 ../nit branch
 echo ""
 sleep 1
 
 # Checkout feature branch
 echo "═══ Step 9: Switch to Feature Branch ═══"
-echo "$ vcs checkout feature-greeting"
+echo "$ nit checkout feature-greeting"
 ../nit checkout feature-greeting
 echo ""
 sleep 1
@@ -140,33 +140,33 @@ sleep 1
 
 # Stage and commit changes
 echo "═══ Step 11: Commit Feature ═══"
-echo "$ vcs add ."
+echo "$ nit add ."
 ../nit add .
 echo ""
-echo "$ vcs commit -m \"Add greet function\""
+echo "$ nit commit -m \"Add greet function\""
 ../nit commit -m "Add greet function"
 echo ""
 sleep 1
 
 # View log on feature branch
 echo "═══ Step 12: View Feature Branch History ═══"
-echo "$ vcs log"
+echo "$ nit log"
 ../nit log
 echo ""
 sleep 1
 
 # Switch back to master
 echo "═══ Step 13: Return to Master Branch ═══"
-echo "$ vcs checkout master"
+echo "$ nit checkout master"
 ../nit checkout master
 echo ""
 sleep 1
 
 # Create another branch for bugfix
 echo "═══ Step 14: Create Bugfix Branch ═══"
-echo "$ vcs branch bugfix-typo"
+echo "$ nit branch bugfix-typo"
 ../nit branch bugfix-typo
-echo "$ vcs checkout bugfix-typo"
+echo "$ nit checkout bugfix-typo"
 ../nit checkout bugfix-typo
 echo ""
 sleep 1
@@ -184,38 +184,38 @@ sleep 1
 
 # Switch to master and merge bugfix
 echo "═══ Step 16: Merge Bugfix to Master ═══"
-echo "$ vcs checkout master"
+echo "$ nit checkout master"
 ../nit checkout master
 echo ""
-echo "$ vcs merge bugfix-typo"
+echo "$ nit merge bugfix-typo"
 ../nit merge bugfix-typo
 echo ""
 sleep 1
 
 # Merge feature branch
 echo "═══ Step 17: Merge Feature to Master ═══"
-echo "$ vcs merge feature-greeting"
+echo "$ nit merge feature-greeting"
 ../nit merge feature-greeting
 echo ""
 sleep 1
 
 # View final log
 echo "═══ Step 18: View Complete History ═══"
-echo "$ vcs log"
+echo "$ nit log"
 ../nit log
 echo ""
 sleep 1
 
 # Show final status
 echo "═══ Step 19: Final Status ═══"
-echo "$ vcs status"
+echo "$ nit status"
 ../nit status
 echo ""
 sleep 1
 
 # List all branches
 echo "═══ Step 20: List All Branches ═══"
-echo "$ vcs branch"
+echo "$ nit branch"
 ../nit branch
 echo ""
 sleep 1
@@ -244,17 +244,17 @@ sleep 1
 echo "═══ Step 23: Detached HEAD State ═══"
 first_commit=$(../nit log -n 1 | grep "^commit" | tail -1 | awk '{print $2}')
 short_commit="${first_commit:0:7}"
-echo "$ vcs checkout $short_commit"
+echo "$ nit checkout $short_commit"
 ../nit checkout "$first_commit"
 echo ""
-echo "$ vcs status"
+echo "$ nit status"
 ../nit status
 echo ""
 sleep 1
 
 # Return to master
 echo "═══ Step 24: Return to Master ═══"
-echo "$ vcs checkout master"
+echo "$ nit checkout master"
 ../nit checkout master
 echo ""
 

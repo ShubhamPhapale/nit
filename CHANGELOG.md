@@ -18,15 +18,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial release of nit (Version Control System)
-- Repository initialization (`vcs init`)
-- File staging (`vcs add`)
-- Commit functionality (`vcs commit`)
-- Branch creation, deletion, and listing (`vcs branch`)
-- Branch checkout (`vcs checkout`)
-- Fast-forward merge
-- Three-way merge (`vcs merge`)
-- Commit history viewing (`vcs log`)
-- Repository status (`vcs status`)
+- Repository initialization (`nit init`)
+- File staging (`nit add`)
+- Commit functionality (`nit commit`)
+- Branch creation, deletion, and listing (`nit branch`)
+- Branch checkout (`nit checkout`)
+- Fast-forward merge support
+- Three-way merge (`nit merge`)
+- Commit history viewing (`nit log`)
+- Repository status (`nit status`)
 - Detached HEAD support
 - SHA-1 content-addressable storage
 - zlib compression for objects

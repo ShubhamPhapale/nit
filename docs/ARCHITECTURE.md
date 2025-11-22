@@ -2,13 +2,13 @@
 
 ## Overview
 
-VCS is a distributed version control system implemented in C, following a Git-like architecture with content-addressable object storage, staging area, and branching support.
+nit is a distributed version control system implemented in C, following a Git-like architecture with content-addressable object storage, staging area, and branching support.
 
 ## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                       VCS CLI (main.c)                      │
+│                       nit CLI (main.c)                      │
 │  Commands: init, add, commit, branch, checkout, merge, etc. │
 └───────────────────────────┬─────────────────────────────────┘
                             │
@@ -322,7 +322,7 @@ find_merge_base()
 ```
 1. User edits files
    ↓
-2. vcs add <file>
+2. nit add <file>
    ↓
 3. Read file content
    ↓
@@ -334,7 +334,7 @@ find_merge_base()
    ↓
 7. Update index
    ↓
-8. vcs commit -m "message"
+8. nit commit -m "message"
    ↓
 9. Build tree from index
    ↓
@@ -509,7 +509,7 @@ Not implemented. Could add:
 
 ## Comparison with Git
 
-| Feature | VCS | Git |
+| Feature | nit | Git |
 |---------|-----|-----|
 | Object storage | ✓ | ✓ |
 | SHA-1 hashing | ✓ | ✓ (migrating to SHA-256) |

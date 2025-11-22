@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug in VCS
+description: Report a bug in nit
 title: "[BUG]: "
 labels: ["bug", "triage"]
 body:
@@ -23,9 +23,9 @@ body:
       label: Steps to Reproduce
       description: Steps to reproduce the behavior
       placeholder: |
-        1. Initialize repository with 'vcs init'
-        2. Add a file with 'vcs add file.txt'
-        3. Commit with 'vcs commit -m "test"'
+        1. Initialize repository with 'nit init'
+        2. Add a file with 'nit add file.txt'
+        3. Commit with 'nit commit -m "test"'
         4. See error
     validations:
       required: true
@@ -49,8 +49,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: VCS Version
-      description: What version of VCS are you running?
+      label: nit Version
+      description: What version of nit are you running?
       placeholder: "1.0.0"
     validations:
       required: true

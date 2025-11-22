@@ -2,7 +2,7 @@
 
 ## 🎯 Repository Setup Complete
 
-Your VCS project has been successfully set up following software engineering best practices!
+Your nit project has been successfully set up following software engineering best practices!
 
 ### 📦 Repository Information
 - **Remote Origin**: https://github.com/ShubhamPhapale/nit
@@ -149,11 +149,11 @@ make CFLAGS="-Wall -Wextra -Werror -std=c11 -O2"
 
 # Manual testing
 mkdir test-dir && cd test-dir
-../vcs init
+../nit init
 echo "test" > file.txt
-../vcs add file.txt
-../vcs commit -m "Test commit"
-../vcs log
+../nit add file.txt
+../nit commit -m "Test commit"
+../nit log
 cd .. && rm -rf test-dir
 ```
 
@@ -164,10 +164,10 @@ make clean
 make CFLAGS="-Wall -Wextra -std=c11 -g -O0"
 
 # Run with GDB
-gdb ./vcs
+gdb ./nit
 
 # Run with Valgrind
-valgrind --leak-check=full ./vcs init
+valgrind --leak-check=full ./nit init
 ```
 
 ## 📝 Commit Message Convention

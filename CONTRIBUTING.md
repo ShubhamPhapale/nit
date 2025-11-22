@@ -84,9 +84,9 @@ We follow the Git Flow branching model:
    ./scripts/test.sh
    
    # Test manually if needed
-   ./vcs init
-   ./vcs add .
-   ./vcs commit -m "Test"
+   ./nit init
+   ./nit add .
+   ./nit commit -m "Test"
    ```
 
 6. **Commit Your Changes**
@@ -187,11 +187,11 @@ test(branch): add branch creation tests
 
 # Manual testing
 mkdir test-dir && cd test-dir
-../vcs init
+../nit init
 echo "test" > file.txt
-../vcs add file.txt
-../vcs commit -m "Test"
-../vcs log
+../nit add file.txt
+../nit commit -m "Test"
+../nit log
 ```
 
 ### Writing Tests
@@ -248,7 +248,7 @@ make CFLAGS="-Wall -Wextra -std=c11 -g -O0"
 ### Use Valgrind for Memory Leaks
 
 ```bash
-valgrind --leak-check=full ./vcs init
+valgrind --leak-check=full ./nit init
 ```
 
 ### Enable Verbose Logging
@@ -285,4 +285,4 @@ If you have questions:
 3. Ask in GitHub Discussions
 4. Create a new issue
 
-Thank you for contributing to VCS! 🎉
+Thank you for contributing to nit! 🎉

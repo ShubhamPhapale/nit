@@ -29,7 +29,7 @@ Fixes #(issue number)
 ### Test Configuration
 - OS: 
 - Compiler: 
-- VCS Version: 
+- nit Version: 
 
 ### Test Steps
 1. 

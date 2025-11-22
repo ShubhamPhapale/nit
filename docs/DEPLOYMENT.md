@@ -47,14 +47,14 @@ make clean
 make
 
 # Install to custom location
-sudo cp vcs /usr/local/bin/
+sudo cp nit /usr/local/bin/
 sudo chmod 755 /usr/local/bin/vcs
 ```
 
 ## Configuration
 
 ### System-Wide Configuration
-VCS uses per-repository configuration stored in `.vcs/config`.
+nit uses per-repository configuration stored in `.vcs/config`.
 
 Default configuration:
 ```
@@ -64,7 +64,7 @@ Default configuration:
 ```
 
 ### User Information
-VCS automatically detects user information from system:
+nit automatically detects user information from system:
 - Username from `/etc/passwd`
 - Hostname from system
 - Format: `Name <user@hostname>`
@@ -88,7 +88,7 @@ VCS automatically detects user information from system:
 ## Security Considerations
 
 ### SHA-1 Considerations
-VCS currently uses SHA-1 for content addressing. While sufficient for most use cases:
+nit currently uses SHA-1 for content addressing. While sufficient for most use cases:
 - **Risk**: Collision attacks are theoretically possible
 - **Mitigation**: For high-security environments, consider migrating to SHA-256
 - **Status**: SHA-1 is still widely used in Git and is practical for most purposes
@@ -99,7 +99,7 @@ VCS currently uses SHA-1 for content addressing. While sufficient for most use c
 - No encryption of repository data
 
 ### Access Control
-- VCS is a local version control system
+- nit is a local version control system
 - No built-in authentication/authorization
 - Rely on filesystem permissions for access control
 
@@ -145,9 +145,9 @@ du -sh .vcs/
 ```
 
 ### Error Logging
-VCS prints errors to stderr. Redirect for logging:
+nit prints errors to stderr. Redirect for logging:
 ```bash
-vcs commit -m "message" 2>> /var/log/vcs-errors.log
+nit commit -m "message" 2>> /var/log/vcs-errors.log
 ```
 
 ### Metrics to Monitor
@@ -174,8 +174,8 @@ rsync -av .vcs/ /backup/location/.vcs/
 tar -xzf vcs-backup-YYYYMMDD.tar.gz
 
 # Verify integrity
-vcs log
-vcs status
+nit log
+nit status
 ```
 
 ### Disaster Recovery
@@ -189,9 +189,9 @@ If `.vcs` directory is corrupted:
 
 ### Common Issues
 
-#### 1. "Not a VCS repository"
+#### 1. "Not a nit repository"
 **Cause**: No `.vcs` directory found
-**Solution**: Run `vcs init` or navigate to repository root
+**Solution**: Run `nit init` or navigate to repository root
 
 #### 2. "Failed to write object"
 **Cause**: Disk full or permission issues
@@ -261,10 +261,10 @@ make CFLAGS="-Wall -Wextra -std=c11 -O2 -DNDEBUG"
 sudo make install
 
 # 4. Verify
-vcs init test-repo
+nit init test-repo
 cd test-repo && echo "test" > file.txt
-vcs add . && vcs commit -m "Test"
-vcs log
+nit add . && nit commit -m "Test"
+nit log
 cd .. && rm -rf test-repo
 ```
 
@@ -288,7 +288,7 @@ make clean && make
 sudo make install
 
 # Verify
-vcs --version  # if implemented
+nit --version  # if implemented
 ```
 
 ## Support

@@ -158,19 +158,19 @@ make
 sudo make install
 
 # Initialize repository
-vcs init
+nit init
 
 # Add files
-vcs add .
+nit add .
 
 # Commit
-vcs commit -m "Initial commit"
+nit commit -m "Initial commit"
 
 # Create branch
-vcs branch feature
+nit branch feature
 
 # Merge
-vcs merge feature
+nit merge feature
 ```
 
 ## Commands Available
@@ -272,27 +272,27 @@ vcs merge feature
 
 ### Example 1: Basic Workflow
 ```bash
-$ vcs init
+$ nit init
 $ echo "Hello" > file.txt
-$ vcs add file.txt
-$ vcs commit -m "Add file"
-$ vcs log
+$ nit add file.txt
+$ nit commit -m "Add file"
+$ nit log
 ```
 
 ### Example 2: Branching
 ```bash
-$ vcs branch feature
-$ vcs checkout feature
+$ nit branch feature
+$ nit checkout feature
 $ echo "Feature" >> file.txt
-$ vcs add file.txt
-$ vcs commit -m "Add feature"
-$ vcs checkout master
-$ vcs merge feature
+$ nit add file.txt
+$ nit commit -m "Add feature"
+$ nit checkout master
+$ nit merge feature
 ```
 
 ### Example 3: Status Checking
 ```bash
-$ vcs status
+$ nit status
 On branch master
 
 Changes to be committed:
@@ -416,9 +416,9 @@ sudo make install
 ./demo.sh
 
 # Use nit
-vcs init
-vcs add .
-vcs commit -m "First commit"
+nit init
+nit add .
+nit commit -m "First commit"
 ```
 
 ---
