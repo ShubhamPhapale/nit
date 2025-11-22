@@ -1,0 +1,184 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref_name }}
+          body: |
+            ## nit Version Control System - ${{ github.ref_name }}
+            
+            A fully functional version control system implemented in C.
+            
+            ### Installation
+            
+            #### Linux (Ubuntu/Debian)
+            ```bash
+            # Download the binary
+            wget https://github.com/ShubhamPhapale/nit/releases/download/${{ github.ref_name }}/nit-linux-x86_64
+            chmod +x nit-linux-x86_64
+            sudo mv nit-linux-x86_64 /usr/local/bin/nit
+            ```
+            
+            #### macOS (ARM64)
+            ```bash
+            # Download the binary
+            wget https://github.com/ShubhamPhapale/nit/releases/download/${{ github.ref_name }}/nit-macos-arm64
+            chmod +x nit-macos-arm64
+            sudo mv nit-macos-arm64 /usr/local/bin/nit
+            ```
+            
+            #### macOS (x86_64)
+            ```bash
+            # Download the binary
+            wget https://github.com/ShubhamPhapale/nit/releases/download/${{ github.ref_name }}/nit-macos-x86_64
+            chmod +x nit-macos-x86_64
+            sudo mv nit-macos-x86_64 /usr/local/bin/nit
+            ```
+            
+            ### Quick Start
+            ```bash
+            # Verify installation
+            nit version
+            
+            # Initialize a repository
+            nit init
+            
+            # Start using
+            nit add .
+            nit commit -m "Initial commit"
+            ```
+            
+            See [CHANGELOG.md](https://github.com/ShubhamPhapale/nit/blob/main/CHANGELOG.md) for details.
+          draft: false
+          prerelease: false
+
+  build-linux:
+    name: Build Linux (x86_64)
+    needs: create-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libssl-dev zlib1g-dev
+
+      - name: Build
+        run: |
+          make clean
+          make
+
+      - name: Test
+        run: |
+          ./scripts/test.sh
+
+      - name: Prepare artifact
+        run: |
+          cp nit nit-linux-x86_64
+          chmod +x nit-linux-x86_64
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ./nit-linux-x86_64
+          asset_name: nit-linux-x86_64
+          asset_content_type: application/octet-stream
+
+  build-macos-arm64:
+    name: Build macOS (ARM64)
+    needs: create-release
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          brew install openssl zlib
+
+      - name: Build
+        run: |
+          make clean
+          make
+
+      - name: Test
+        run: |
+          ./scripts/test.sh
+
+      - name: Prepare artifact
+        run: |
+          cp nit nit-macos-arm64
+          chmod +x nit-macos-arm64
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ./nit-macos-arm64
+          asset_name: nit-macos-arm64
+          asset_content_type: application/octet-stream
+
+  build-macos-x86_64:
+    name: Build macOS (x86_64)
+    needs: create-release
+    runs-on: macos-13
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          brew install openssl zlib
+
+      - name: Build
+        run: |
+          make clean
+          make
+
+      - name: Test
+        run: |
+          ./scripts/test.sh
+
+      - name: Prepare artifact
+        run: |
+          cp nit nit-macos-x86_64
+          chmod +x nit-macos-x86_64
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ./nit-macos-x86_64
+          asset_name: nit-macos-x86_64
+          asset_content_type: application/octet-stream
