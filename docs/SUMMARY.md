@@ -1,8 +1,8 @@
-# VCS Project Summary
+# nit Project Summary
 
 ## Project Overview
 
-**VCS (Version Control System)** is a fully functional, production-ready version control system implemented in C, inspired by Git. It provides core version control features including repository management, staging, commits, branching, merging, and history tracking.
+**nit (Version Control System)** is a fully functional, production-ready version control system implemented in C, inspired by Git. It provides core version control features including repository management, staging, commits, branching, merging, and history tracking.
 
 ## Implementation Status: ✅ COMPLETE
 
@@ -127,7 +127,7 @@ Working Tree → Index (Stage) → Tree Object → Commit Object → Repository
 
 ### Test Results
 ```
-=== VCS Test Suite ===
+=== nit Test Suite ===
 [1/10] Repository initialization    ✓ PASS
 [2/10] File staging                  ✓ PASS
 [3/10] Status reporting              ✓ PASS
@@ -177,21 +177,21 @@ vcs merge feature
 
 | Command | Description |
 |---------|-------------|
-| `vcs init` | Initialize repository |
-| `vcs add <file>` | Stage file |
-| `vcs add .` | Stage all files |
-| `vcs commit -m "msg"` | Create commit |
-| `vcs status` | Show status |
-| `vcs log [-n N]` | Show history |
-| `vcs branch [name]` | List/create branch |
-| `vcs branch -d name` | Delete branch |
-| `vcs checkout <branch>` | Switch branch |
-| `vcs merge <branch>` | Merge branch |
-| `vcs diff [commit]` | Show differences |
+| `nit init` | Initialize repository |
+| `nit add <file>` | Stage file |
+| `nit add .` | Stage all files |
+| `nit commit -m "msg"` | Create commit |
+| `nit status` | Show status |
+| `nit log [-n N]` | Show history |
+| `nit branch [name]` | List/create branch |
+| `nit branch -d name` | Delete branch |
+| `nit checkout <branch>` | Switch branch |
+| `nit merge <branch>` | Merge branch |
+| `nit diff [commit]` | Show differences |
 
 ## Comparison with Git
 
-| Feature | VCS | Git | Notes |
+| Feature | nit | Git | Notes |
 |---------|-----|-----|-------|
 | Object storage | ✓ | ✓ | Similar design |
 | Commits | ✓ | ✓ | Full metadata |
@@ -332,13 +332,13 @@ Untracked files:
 $ make clean && make
 Clean complete
 gcc -Wall -Wextra -std=c11 -O2 ...
-Build complete: vcs
+Build complete: nit
 ```
 
 ### Run Test
 ```bash
 $ ./test.sh
-=== VCS Test Suite ===
+=== nit Test Suite ===
 ...
 All tests passed!
 ```
@@ -347,15 +347,15 @@ All tests passed!
 ```bash
 $ ./demo.sh
 ╔════════════════════════════════════════════╗
-║      VCS - Version Control System Demo    ║
+║      nit - Version Control System Demo    ║
 ╚════════════════════════════════════════════╝
 ...
-VCS is fully functional and production-ready!
+nit is fully functional and production-ready!
 ```
 
 ## Conclusion
 
-VCS is a **fully functional, production-ready version control system** that successfully implements all core VCS features:
+nit is a **fully functional, production-ready version control system** that successfully implements all core VCS features:
 
 ✅ **Complete**: All planned features implemented  
 ✅ **Tested**: Comprehensive test suite passing  
@@ -365,7 +365,7 @@ VCS is a **fully functional, production-ready version control system** that succ
 ✅ **Production-Ready**: Clean build, no warnings, cross-platform  
 
 The system is ready for:
-- Educational purposes (learning VCS internals)
+- Educational purposes (learning nit internals)
 - Personal projects (local version control)
 - Small team collaboration (with backup strategy)
 - Further development (extensible architecture)
@@ -415,7 +415,7 @@ sudo make install
 # Run demo
 ./demo.sh
 
-# Use VCS
+# Use nit
 vcs init
 vcs add .
 vcs commit -m "First commit"

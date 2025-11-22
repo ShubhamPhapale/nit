@@ -1,4 +1,4 @@
-# VCS - Version Control System
+# nit - Version Control System
 
 A fully functional, production-ready version control system implemented in C, inspired by Git.
 
@@ -209,7 +209,7 @@ vcs diff <commit-sha1>
 
 ## Error Handling
 
-The VCS system includes comprehensive error handling:
+The nit system includes comprehensive error handling:
 - File system operation errors
 - Invalid object references
 - Branch conflicts
@@ -285,7 +285,7 @@ vcs init
 
 # Create some files
 echo "Hello World" > hello.txt
-echo "VCS System" > readme.txt
+echo "nit System" > readme.txt
 
 # Stage files
 vcs add .

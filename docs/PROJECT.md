@@ -1,4 +1,4 @@
-# VCS - Version Control System
+# nit - Version Control System
 
 ## 🎯 Project Complete
 
@@ -316,7 +316,7 @@ This project demonstrates:
 
 **✅ COMPLETE AND PRODUCTION READY**
 
-The VCS system is fully functional, thoroughly tested, and ready for production use. All core version control features are implemented with clean, efficient, and well-documented code.
+The nit system is fully functional, thoroughly tested, and ready for production use. All core version control features are implemented with clean, efficient, and well-documented code.
 
 ---
 

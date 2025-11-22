@@ -1,4 +1,4 @@
-# Contributing to VCS (nit)
+# Contributing to nit (nit)
 
 Thank you for your interest in contributing to VCS! This document provides guidelines and instructions for contributing.
 

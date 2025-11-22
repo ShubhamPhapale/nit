@@ -1,4 +1,4 @@
-# VCS Architecture Documentation
+# nit Architecture Documentation
 
 ## Overview
 

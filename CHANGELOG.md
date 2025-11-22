@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-11-22
 
 ### Added
-- Initial release of VCS (nit)
+- Initial release of nit (Version Control System)
 - Repository initialization (`vcs init`)
 - File staging (`vcs add`)
 - Commit functionality (`vcs commit`)

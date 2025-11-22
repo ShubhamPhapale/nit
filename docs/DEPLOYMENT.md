@@ -1,4 +1,4 @@
-# VCS Production Deployment Guide
+# nit Production Deployment Guide
 
 ## System Requirements
 
@@ -40,7 +40,7 @@ sudo make install
 ### Manual Installation
 ```bash
 # Download or clone the source
-cd /path/to/vcs-source
+cd /path/to/nit-source
 
 # Build
 make clean
