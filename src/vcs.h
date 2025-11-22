@@ -11,6 +11,12 @@
 #include <unistd.h>
 #include <errno.h>
 
+// Version information
+#define NIT_VERSION "1.0.0"
+#define NIT_VERSION_MAJOR 1
+#define NIT_VERSION_MINOR 0
+#define NIT_VERSION_PATCH 0
+
 // Constants
 #define VCS_DIR ".vcs"
 #define OBJECTS_DIR ".vcs/objects"

@@ -10,6 +10,7 @@ static int cmd_branch(int argc, char *argv[]);
 static int cmd_checkout(int argc, char *argv[]);
 static int cmd_merge(int argc, char *argv[]);
 static int cmd_diff(int argc, char *argv[]);
+static int cmd_version(int argc, char *argv[]);
 static void print_usage(void);
 
 int main(int argc, char *argv[]) {
@@ -38,6 +39,8 @@ int main(int argc, char *argv[]) {
         return cmd_merge(argc - 1, argv + 1);
     } else if (strcmp(command, "diff") == 0) {
         return cmd_diff(argc - 1, argv + 1);
+    } else if (strcmp(command, "version") == 0 || strcmp(command, "--version") == 0 || strcmp(command, "-v") == 0) {
+        return cmd_version(argc - 1, argv + 1);
     } else {
         fprintf(stderr, "Error: Unknown command '%s'\n", command);
         print_usage();
@@ -286,8 +289,16 @@ static int cmd_diff(int argc, char *argv[]) {
     return vcs_diff(commit);
 }
 
+static int cmd_version(int argc, char *argv[]) {
+    (void)argc;
+    (void)argv;
+    printf("nit version %s\n", NIT_VERSION);
+    printf("A fully functional version control system implemented in C\n");
+    return 0;
+}
+
 static void print_usage(void) {
-    printf("nit - Version Control System\n\n");
+    printf("nit - Version Control System v%s\n\n", NIT_VERSION);
     printf("Usage: nit <command> [<args>]\n\n");
     printf("Commands:\n");
     printf("  init                Initialize a new repository\n");
@@ -301,4 +312,5 @@ static void print_usage(void) {
     printf("  checkout <branch>   Switch to a branch or commit\n");
     printf("  merge <branch>      Merge a branch into current branch\n");
     printf("  diff [<commit>]     Show differences\n");
+    printf("  version             Show version information\n");
 }
