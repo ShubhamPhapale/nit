@@ -48,7 +48,7 @@ make
 
 # Install to custom location
 sudo cp nit /usr/local/bin/
-sudo chmod 755 /usr/local/bin/vcs
+sudo chmod 755 /usr/local/bin/nit
 ```
 
 ## Configuration
