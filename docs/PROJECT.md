@@ -1,4 +1,4 @@
-# VCS - Version Control System
+# nit - Version Control System
 
 ## 🎯 Project Complete
 
@@ -104,27 +104,27 @@ sudo make install
 
 ### Initialize and commit
 ```bash
-vcs init
-vcs add .
-vcs commit -m "Initial commit"
+nit init
+nit add .
+nit commit -m "Initial commit"
 ```
 
 ### Branch and merge
 ```bash
-vcs branch feature
-vcs checkout feature
+nit branch feature
+nit checkout feature
 # ... make changes ...
-vcs add .
-vcs commit -m "Add feature"
-vcs checkout master
-vcs merge feature
+nit add .
+nit commit -m "Add feature"
+nit checkout master
+nit merge feature
 ```
 
 ### View history
 ```bash
-vcs log
-vcs status
-vcs branch
+nit log
+nit status
+nit branch
 ```
 
 ---
@@ -316,27 +316,27 @@ This project demonstrates:
 
 **✅ COMPLETE AND PRODUCTION READY**
 
-The VCS system is fully functional, thoroughly tested, and ready for production use. All core version control features are implemented with clean, efficient, and well-documented code.
+The nit system is fully functional, thoroughly tested, and ready for production use. All core version control features are implemented with clean, efficient, and well-documented code.
 
 ---
 
 ## 📝 Quick Commands Reference
 
 ```bash
-vcs init                 # Initialize repository
-vcs add <file>          # Stage file
-vcs add .               # Stage all files
-vcs commit -m "msg"     # Create commit
-vcs status              # Show status
-vcs log                 # Show history
-vcs log -n 5            # Show last 5 commits
-vcs branch              # List branches
-vcs branch <name>       # Create branch
-vcs branch -d <name>    # Delete branch
-vcs checkout <branch>   # Switch branch
-vcs checkout <commit>   # Detached HEAD
-vcs merge <branch>      # Merge branch
-vcs diff [commit]       # Show differences
+nit init                 # Initialize repository
+nit add <file>          # Stage file
+nit add .               # Stage all files
+nit commit -m "msg"     # Create commit
+nit status              # Show status
+nit log                 # Show history
+nit log -n 5            # Show last 5 commits
+nit branch              # List branches
+nit branch <name>       # Create branch
+nit branch -d <name>    # Delete branch
+nit checkout <branch>   # Switch branch
+nit checkout <commit>   # Detached HEAD
+nit merge <branch>      # Merge branch
+nit diff [commit]       # Show differences
 ```
 
 ---

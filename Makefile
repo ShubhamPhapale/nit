@@ -18,7 +18,7 @@ BUILD_DIR = build
 BIN_DIR = .
 
 # Files
-TARGET = $(BIN_DIR)/vcs
+TARGET = $(BIN_DIR)/nit
 SOURCES = $(wildcard $(SRC_DIR)/*.c)
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 
@@ -40,7 +40,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(SRC_DIR)/vcs.h
 
 # Clean build artifacts
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET) *.o
+	rm -rf $(BUILD_DIR) $(TARGET) vcs *.o
 	@echo "Clean complete"
 
 # Install to system

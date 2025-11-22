@@ -1,4 +1,4 @@
-# VCS - Version Control System
+# nit - Version Control System
 
 A fully functional, production-ready version control system implemented in C, inspired by Git.
 
@@ -78,76 +78,76 @@ sudo make install
 ### Initialize a Repository
 
 ```bash
-vcs init
+nit init
 ```
 
 ### Stage Files
 
 ```bash
 # Add specific file
-vcs add myfile.txt
+nit add myfile.txt
 
 # Add all files
-vcs add .
+nit add .
 ```
 
 ### Create a Commit
 
 ```bash
-vcs commit -m "Initial commit"
+nit commit -m "Initial commit"
 ```
 
 ### View Status
 
 ```bash
-vcs status
+nit status
 ```
 
 ### View Commit History
 
 ```bash
 # Show all commits
-vcs log
+nit log
 
 # Show last N commits
-vcs log -n 5
+nit log -n 5
 ```
 
 ### Branching
 
 ```bash
 # List branches
-vcs branch
+nit branch
 
 # Create new branch
-vcs branch feature-x
+nit branch feature-x
 
 # Delete branch
-vcs branch -d feature-x
+nit branch -d feature-x
 ```
 
 ### Switch Branches
 
 ```bash
 # Checkout branch
-vcs checkout feature-x
+nit checkout feature-x
 
 # Checkout specific commit (detached HEAD)
-vcs checkout a1b2c3d4
+nit checkout a1b2c3d4
 ```
 
 ### Merge Branches
 
 ```bash
 # Merge branch into current branch
-vcs merge feature-x
+nit merge feature-x
 ```
 
 ### View Differences
 
 ```bash
-vcs diff
-vcs diff <commit-sha1>
+nit diff
+nit diff <commit-sha1>
 ```
 
 ## Repository Structure
@@ -209,7 +209,7 @@ vcs diff <commit-sha1>
 
 ## Error Handling
 
-The VCS system includes comprehensive error handling:
+The nit system includes comprehensive error handling:
 - File system operation errors
 - Invalid object references
 - Branch conflicts
@@ -281,37 +281,37 @@ sudo make uninstall
 
 ```bash
 # Initialize repository
-vcs init
+nit init
 
 # Create some files
 echo "Hello World" > hello.txt
-echo "VCS System" > readme.txt
+echo "nit System" > readme.txt
 
 # Stage files
-vcs add .
+nit add .
 
 # Create first commit
-vcs commit -m "Initial commit"
+nit commit -m "Initial commit"
 
 # Create a new branch
-vcs branch feature
+nit branch feature
 
 # Switch to feature branch
-vcs checkout feature
+nit checkout feature
 
 # Make changes
 echo "Feature implementation" >> hello.txt
-vcs add hello.txt
-vcs commit -m "Add feature"
+nit add hello.txt
+nit commit -m "Add feature"
 
 # Switch back to master
-vcs checkout master
+nit checkout master
 
 # Merge feature
-vcs merge feature
+nit merge feature
 
 # View history
-vcs log
+nit log
 ```
 
 ## Author

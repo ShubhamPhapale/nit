@@ -287,8 +287,8 @@ static int cmd_diff(int argc, char *argv[]) {
 }
 
 static void print_usage(void) {
-    printf("VCS - Version Control System\n\n");
-    printf("Usage: vcs <command> [<args>]\n\n");
+    printf("nit - Version Control System\n\n");
+    printf("Usage: nit <command> [<args>]\n\n");
     printf("Commands:\n");
     printf("  init                Initialize a new repository\n");
     printf("  add <file>          Add file to staging area\n");
